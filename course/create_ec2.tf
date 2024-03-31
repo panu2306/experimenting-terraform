@@ -7,19 +7,22 @@ locals {
 		owner 	= "DevOps Team"
 		service = "Backend Server"
 	}
+	time = formatdate("EEEE, DD-MMM-YY hh:mm:ss ZZZ", timestamp())
 }
 
-resource "aws_instance" "my_first_ec2" {
-	ami 		= "ami-05c969369880fa2c2"
+resource "aws_instance" "my_ec2" {
+	ami 		= "${lookup(var.ami_list, var.regions[2])}"
 	instance_type   = "t2.micro"
 	
-	tags = local.common_tags
+	count = 2
+
+	tags = "${merge(
+		local.common_tags, 
+		{"Name" = "EC2-${count.index}"}
+	)}"
 }
 
-output "ec2_info" {
-	value = aws_instance.my_first_ec2
-}
 
-output "ec2_ip_dns" {
-	value = "DNS: ${aws_instance.my_first_ec2.public_dns} and IP: ${aws_instance.my_first_ec2.public_ip}"
+output "time_created" {
+	value = local.time
 }
