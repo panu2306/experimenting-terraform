@@ -1,5 +1,5 @@
 resource "aws_security_group" "sg-01" {
-  name        = "local-sg"
+  name        = "my-sg"
   description = "Sample security group to define values of ports using local"
 }
 
@@ -31,3 +31,7 @@ locals {
   http_port = 80
 }
 
+
+output "sg_name" {
+	value = aws_security_group.sg-01.name
+}
