@@ -1,6 +1,7 @@
 resource "aws_security_group" "sg-01" {
   name        = "my-sg"
   description = "Sample security group to define values of ports using local"
+  vpc_id = var.vpc_id
 }
 
 resource "aws_vpc_security_group_ingress_rule" "allow_ssh" {
@@ -32,6 +33,3 @@ locals {
 }
 
 
-output "sg_name" {
-	value = aws_security_group.sg-01.name
-}
