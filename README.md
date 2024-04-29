@@ -1,6 +1,14 @@
 # experimenting-terraform
 Repository to store all the terraform related code samples, articles, information docs and much more!
 
+### Terraform Init : 
+- Safe to run multiple times
+- Some of the options for the command:
+	- -input=true Ask for input if necessary. If false, will error if input was required.
+	- -lock=false Disable locking of state files during state-related operations.
+	- -lock-timeout=<duration> Override the time Terraform will wait to acquire a state lock. The default is 0s (zero seconds), which causes immediate failure if the lock is already held by another process.
+	- -no-color Disable color codes in the command output.
+ 	- -upgrade Opt to upgrade modules and plugins as part of their respective installation steps. See the sections below for more details.
 
 ### Variables in TF - 
 Variable definition - 
