@@ -1,7 +1,7 @@
 # experimenting-terraform
 Repository to store all the terraform related code samples, articles, information docs and much more!
 
-### Terraform Init : 
+### Terraform Init -
 - Safe to run multiple times
 - Some of the options for the command:
 	- -input=true Ask for input if necessary. If false, will error if input was required.
@@ -9,7 +9,18 @@ Repository to store all the terraform related code samples, articles, informatio
 	- -lock-timeout=<duration> Override the time Terraform will wait to acquire a state lock. The default is 0s (zero seconds), which causes immediate failure if the lock is already held by another process.
 	- -no-color Disable color codes in the command output.
  	- -upgrade Opt to upgrade modules and plugins as part of their respective installation steps. See the sections below for more details.
-
+ 
+### Terraform Plan -
+- creates execution plan which lets one to preview the changes to be made.
+- Workflow -
+  	- reads current state of already created remote objects
+  	- compare current state with prior state and lists out differences
+  	- proposes set of actions, if applied, can make changes to remote objects to match desired configuration.
+- `-out=FILE` can be used to save plan to the file on the disk.
+- `-target=resource_address` can be used to target particular resource and plan for that resource.
+- `-var-file=file` can be used to supply values to variables mentioned in the configuration.
+- `-replace=resource_address` is used to replace the mentioned resource or resource configuration that has been degraded or faulty instead of all the resources. It is also known as resource tainting.
+ 
 ### Variables in TF - 
 Variable definition - 
 ```
