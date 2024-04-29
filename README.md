@@ -20,7 +20,18 @@ Repository to store all the terraform related code samples, articles, informatio
 - `-target=resource_address` can be used to target particular resource and plan for that resource.
 - `-var-file=file` can be used to supply values to variables mentioned in the configuration.
 - `-replace=resource_address` is used to replace the mentioned resource or resource configuration that has been degraded or faulty instead of all the resources. It is also known as resource tainting.
- 
+
+### Terraform Apply - 
+- executes the action proposed by the terraform plan command.
+- Options -
+	- `-auto-approve` skips the interactive approval the plan before applying. Gets skipped automatically when used a plan file instead.
+ 	- `-input=false` disables all the terraform's interactive prompts.
+    
+### Terraform Destroy - 
+- convenient way to destroy all the remote objects described in the terraform configurations.
+- `terraform apply -destroy` or `terraform destroy` can be used to perform the destroy operations.
+- `terraform plan -destroy` can be used to get information about the resources to be destroyed without destroying them.
+  
 ### Variables in TF - 
 Variable definition - 
 ```
