@@ -31,6 +31,12 @@ Repository to store all the terraform related code samples, articles, informatio
 - convenient way to destroy all the remote objects described in the terraform configurations.
 - `terraform apply -destroy` or `terraform destroy` can be used to perform the destroy operations.
 - `terraform plan -destroy` can be used to get information about the resources to be destroyed without destroying them.
+
+#### Terraform configuration styling guide - [official-styleguide](https://developer.hashicorp.com/terraform/language/style)
+
+### Meta Arguments in Terraform - 
+1. `depends_on` - used when terraform can not implicitely handle the dependency. One must limit the use of `depends_on` unless it is necessary, instead use reference values wherever possible to imply the values of other resoures.
+2. 
   
 ### Variables in TF - 
 Variable definition - 
